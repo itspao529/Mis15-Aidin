@@ -105,7 +105,7 @@
             color: #555;
         }
 
-        /* CARRUSEL OPTIMIZADO PARA 6 IMÁGENES */
+        /* CARRUSEL OPTIMIZADO PARA 5 IMÁGENES */
         .photo-section {
             padding: 0 15px;
             margin-bottom: 30px;
@@ -123,26 +123,24 @@
 
         .slides {
             display: flex;
-            width: 600%; /* 100% * 6 imágenes */
+            width: 500%; /* Ajustado a 5 imágenes (100% * 5) */
             height: 100%;
-            /* Tiempo ajustado a 18s (aprox 3s por foto) */
-            animation: slideShow6 18s infinite ease-in-out; 
+            animation: slideShow5 15s infinite ease-in-out; 
         }
 
         .slides img {
-            width: 16.666%; /* 100% / 6 imágenes */
+            width: 20%; /* Ajustado a 5 imágenes (100% / 5) */
             height: 100%;
             object-fit: cover;
         }
 
-        /* Nueva animación calculada para 6 fotos */
-        @keyframes slideShow6 {
-            0%, 13.33% { transform: translateX(0); } /* Foto 1 */
-            16.66%, 29.99% { transform: translateX(-16.666%); } /* Foto 2 */
-            33.33%, 46.66% { transform: translateX(-33.332%); } /* Foto 3 */
-            49.99%, 63.32% { transform: translateX(-49.998%); } /* Foto 4 */
-            66.66%, 79.99% { transform: translateX(-66.664%); } /* Foto 5 */
-            83.33%, 96.66% { transform: translateX(-83.33%); } /* Foto 6 */
+        /* Nueva animación para 5 fotos */
+        @keyframes slideShow5 {
+            0%, 15% { transform: translateX(0); } /* Foto 1 */
+            20%, 35% { transform: translateX(-20%); } /* Foto 2 */
+            40%, 55% { transform: translateX(-40%); } /* Foto 3 */
+            60%, 75% { transform: translateX(-60%); } /* Foto 4 */
+            80%, 95% { transform: translateX(-80%); } /* Foto 5 */
             100% { transform: translateX(0); } /* Vuelve al inicio */
         }
 
@@ -226,9 +224,9 @@
                 <div class="slides">
                     <img src="ella.jpeg" alt="Foto Aidin 1">
                     <img src="img3.jpeg" alt="Foto Aidin 3">
+                    <img src="ella2.jpg" alt="Foto Aidin 2">
                     <img src="img4.jpeg" alt="Foto Aidin 4">
-                    <img src="ella2.jpg">
-                    <img src="ella3.jpg">
+                    <img src="ella3.jpg" alt="Foto Aidin 5">
                 </div>
             </div>
         </div>
@@ -254,8 +252,8 @@
                 <div class="color-palette">
                     <div class="dot" style="background-color: var(--celeste-medio);"></div>
                     <div class="dot" style="background-color: var(--oro);"></div>
-                    <div class="dot" style="background-color: #ffffff;"></div>
-                    <div class="dot" style="background-color: #1a1a1a;"></div>
+                    <div class="dot" style="background-color: #ffffff);"></div>
+                    <div class="dot" style="background-color: #1a1a1a);"></div>
                 </div>
             </div>
 
@@ -264,7 +262,6 @@
     </div>
 
     <script>
-        // Configuración de la cuenta regresiva para el 23 de Mayo de 2026 a las 5:30 PM
         const targetDate = new Date("May 23, 2026 17:30:00").getTime();
         
         function updateCountdown() {
@@ -283,8 +280,8 @@
             document.getElementById("seconds").innerText = String(Math.floor((distance % 60000) / 1000)).padStart(2, '0');
         }
 
-        updateCountdown(); // Ejecutar una vez al inicio
-        const interval = setInterval(updateCountdown, 1000); // Actualizar cada segundo
+        updateCountdown();
+        const interval = setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
